@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';;
+import { Link, useNavigate } from 'react-router-dom';;
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,7 +50,7 @@ const Login = () => {
                         </div>
                         
                         <div>
-                            <button className='w-full text-white bg-black rounded-md p-2 ' type="submit">Login</button>
+                            <button onClick={() => navigate('/overview')} className='w-full text-white bg-black rounded-md p-2 ' type="submit">Login</button>
                         </div>
                     </form>
                     <p className='text-center text-gray-500'>
