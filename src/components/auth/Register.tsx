@@ -9,11 +9,11 @@ const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
   
     const handleRegister = (e: React.FormEvent) => {
-      e.preventDefault();
-      console.log('Name:', name);
-      console.log('Email:', email);
-      console.log('CreatePassword:', createPassword);
-    };
+        e.preventDefault();
+        console.log('Name:', name);
+        console.log('Email:', email);
+        console.log('Password:', createPassword);
+      };
   
       const togglePasswordVisibility = () => {
           setShowPassword(!showPassword);
@@ -51,7 +51,7 @@ const Register = () => {
                         <label className='text-gray-500' htmlFor="createPassword">Password</label>
                         <input className='border border-black rounded-md opacity-100 p-3 outline-black' type={showPassword ? "text" : "password"} id="password" value={createPassword} onChange={(e) => setCreatePassword(e.target.value)} required />
                         <div className='absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer' onClick={togglePasswordVisibility}>
-                        {showPassword ? <img src={'src/assets/icons/eye-slash.svg'} className='h-5 w-5 text-gray-500' alt="eye-slash" /> : <img src={'src/assets/icons/eye.svg'} className='h-5 w-5 text-gray-500' alt="eye" />}
+                        {showPassword ? <img src={'src/assets/icons/Eye-slash.svg'} className='h-5 w-5 text-gray-500' alt="eye-slash" /> : <img src={'src/assets/icons/Eye.svg'} className='h-5 w-5 text-gray-500' alt="eye" />}
                         </div>
                         <p className='text-gray-500 flex justify-end'>Passwords must be at least 8 characters</p>
                     </div>
