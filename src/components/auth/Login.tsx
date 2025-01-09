@@ -22,7 +22,7 @@ const Login = () => {
     <>
     <header className='lg:hidden w-full bg-black text-white text-center font-black text-3xl p-4 rounded-b-md'>thriftly</header>
         <div className='h-screen flex flex-row'>
-            <div className='hidden lg:block max-w-1/2 relative'>
+            <div className='hidden lg:block max-w-1/2 relative bg-[#F8F4F0]'>
                 <img src={"src/assets/images/Sidebar.svg"} alt="" className="h-full p-6" />
                 <p className="absolute top-4 left-4 text-white text-2xl font-bold p-8">thriftly</p>
                 <div className='absolute bottom-4 left-4 max-w-[500px] space-y-4 p-8'>
@@ -32,8 +32,8 @@ const Login = () => {
             </div>
 
 
-            <div className='flex flex-1 justify-center items-center'>
-                <div className='shadow-xl rounded-lg h-fit flex flex-col w-2/3 space-y-10 p-8'>
+            <div className='flex flex-1 justify-center items-center bg-[#F8F4F0]'>
+                <div className='shadow-xl rounded-lg h-fit flex flex-col w-2/3 space-y-10 p-8 bg-white'>
                     <h2 className='font-bold text-2xl'>Login</h2>
                     <form className='space-y-8' onSubmit={handleLogin}>
                         <div className="flex flex-col space-y-2">

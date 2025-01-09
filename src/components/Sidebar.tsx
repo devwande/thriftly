@@ -13,7 +13,7 @@ const Sidebar = () => {
 
   return (
     
-        <div className={`relative hidden lg:block bg-black h-screen ${isMinimized ? 'w-28' : 'w-1/4'} rounded-r-xl text-gray-300 p-8 space-y-48 transition-width duration-300`}>
+        <div className={`relative hidden lg:block bg-black h-screen ${isMinimized ? 'w-28' : 'w-full'} rounded-r-xl text-gray-300 p-8 space-y-48 transition-width duration-300`}>
             <div className="">
               {!isMinimized ? <p className=" text-white text-4xl font-bold ">thriftly</p> : <p className=" text-white text-4xl font-bold ">t</p>}
             </div>
