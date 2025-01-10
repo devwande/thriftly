@@ -16,44 +16,42 @@
 
 // export default Overview;
 
-
-import React from 'react';
-import { BalanceCards } from '../components/overview/BalanceCards';
-import { PotsSection } from '../components/overview/PotsSection';
-import { TransactionsSection } from '../components/overview/TransactionsSection';
-import { BudgetsSection } from '../components/overview/BudgetsSection';
-import { RecurringBills } from '../components/overview/Recurringbills';
-import Sidebar from '../components/Sidebar';
-
+import React from "react";
+import { BalanceCards } from "../components/overview/BalanceCards";
+import PotsSection from "../components/overview/PotsSection";
+import { TransactionsSection } from "../components/overview/TransactionsSection";
+import { BudgetsSection } from "../components/overview/BudgetsSection";
+import { RecurringBills } from "../components/overview/Recurringbills";
+import Sidebar from "../components/Sidebar";
 
 export const Overview: React.FC = () => {
   return (
-    <div className='flex flex-row bg-[#F8F4F0]'>
+    <div className="flex flex-row bg-[#F8F4F0]">
       <div>
         <Sidebar />
       </div>
 
       <div className="relative w-full mx-8">
-        
-        <h1 className="text-3xl font-bold mb-8">Overview</h1>
-        
-        <div className="">
-          <div className='space-y-8'>
-          <BalanceCards />
+        <h1 className="text-3xl font-bold my-8">Overview</h1>
+
+        <div className="space-y-4">
+          <div className="space-y-8">
+            <BalanceCards />
           </div>
-          
-          {/* <div className="grid grid-cols-2 gap-8">
-            <PotsSection />
-            <BudgetsSection />
+
+          <div className="grid grid-cols-[1.3fr_1fr] gap-6">
+            <div className="space-y-6">
+              <PotsSection />
+              <TransactionsSection />
+            </div>
+            <div className="row-span-2 space-y-6">
+              <BudgetsSection />
+              <RecurringBills />
+            </div>
           </div>
-          
-          <div className="grid grid-cols-2 gap-8">
-            <TransactionsSection />
-            <RecurringBills />
-          </div> */}
 
         </div>
       </div>
     </div>
   );
-}
+};
