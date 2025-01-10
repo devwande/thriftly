@@ -24,14 +24,15 @@ import { BudgetsSection } from "../components/overview/BudgetsSection";
 import { RecurringBills } from "../components/overview/Recurringbills";
 import Sidebar from "../components/Sidebar";
 
+
 export const Overview: React.FC = () => {
   return (
-    <div className="flex flex-row bg-[#F8F4F0]">
+    <div className="flex flex-row bg-[#F8F4F0] ">
       <div>
         <Sidebar />
       </div>
 
-      <div className="relative w-full mx-8">
+      <div className="relative w-full mx-8 my-auto"> {/* my-auto may be removed based on styling issues */}
         <h1 className="text-3xl font-bold my-8">Overview</h1>
 
         <div className="space-y-4">
@@ -39,12 +40,12 @@ export const Overview: React.FC = () => {
             <BalanceCards />
           </div>
 
-          <div className="grid grid-cols-[1.3fr_1fr] gap-6">
-            <div className="space-y-6">
+          <div className="grid grid-cols-[1.4fr_1fr] gap-6">
+            <div className="space-y-3">
               <PotsSection />
               <TransactionsSection />
             </div>
-            <div className="row-span-2 space-y-6">
+            <div className="row-span-2 space-y-3">
               <BudgetsSection />
               <RecurringBills />
             </div>

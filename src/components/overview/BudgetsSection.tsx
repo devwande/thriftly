@@ -9,10 +9,10 @@ interface BudgetItem {
 }
 
 const budgetItems: BudgetItem[] = [
-  { label: "Entertainment", amount: 50, color: "#10B981" }, // Emerald-500
-  { label: "Bills", amount: 750, color: "#22D3EE" }, // Cyan-400
-  { label: "Dining Out", amount: 75, color: "#FDBA74" }, // Orange-200
-  { label: "Personal Care", amount: 100, color: "#6B7280" }, // Gray-500
+  { label: "Entertainment", amount: 50, color: "#277C78" }, 
+  { label: "Bills", amount: 750, color: "#82C9D7" },
+  { label: "Dining Out", amount: 75, color: "#F2CDAC" },
+  { label: "Personal Care", amount: 100, color: "#626070" },
 ];
 
 const totalLimit = 975;
