@@ -1,5 +1,4 @@
 import React from 'react';
-import { ChevronRight } from 'lucide-react';
 
 interface BillCategory {
   label: string;
@@ -15,12 +14,12 @@ const billCategories: BillCategory[] = [
 
 export const RecurringBills: React.FC = () => {
   return (
-    <div className="bg-white p-6 mb-6 rounded-lg">
+    <div className="bg-white p-6 rounded-lg">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-semibold">Recurring Bills</h2>
-        <button className="text-gray-500 hover:text-gray-700 flex items-center">
+        <button className="text-gray-500 hover:text-gray-700 flex items-center text-sm">
           See Details
-          <ChevronRight className="h-4 w-4 ml-1" />
+          <img src={"src/assets/icons/ArrowRight.svg"} alt='right-arrow' className="ml-3" />
         </button>
       </div>
 

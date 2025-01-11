@@ -27,13 +27,13 @@ import Sidebar from "../components/Sidebar";
 
 export const Overview: React.FC = () => {
   return (
-    <div className="flex flex-row bg-[#F8F4F0] ">
+    <div className="flex flex-row bg-[#F8F4F0] h-screen">
       <div>
         <Sidebar />
       </div>
 
       <div className="relative w-full mx-8 my-auto"> {/* my-auto may be removed based on styling issues */}
-        <h1 className="text-3xl font-bold my-8">Overview</h1>
+        <h1 className="text-3xl font-bold my-5">Overview</h1>
 
         <div className="space-y-4">
           <div className="space-y-8">
