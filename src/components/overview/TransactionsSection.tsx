@@ -39,7 +39,7 @@ export const TransactionsSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <div className={transaction.type === 'credit' ? 'text-green-600 flex justify-end' : 'flex justify-end text-gray-900'}>
                   {transaction.amount}
                 </div>

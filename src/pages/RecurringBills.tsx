@@ -1,9 +1,15 @@
+import Footer from "../components/overview/Footer"
 import Sidebar from "../components/Sidebar"
 
 
 const RecurringBills = () => {
   return (
-    <Sidebar />
+    <>
+      <div className="hidden lg:block">
+        <Sidebar />
+      </div>
+      <Footer />
+    </>
     )
 }
 

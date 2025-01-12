@@ -8,7 +8,7 @@ interface BalanceCardProps {
 
 const BalanceCard: React.FC<BalanceCardProps> = ({ label, amount, variant = 'light' }) => {
   return (
-    <div className={`p-6 rounded-lg ${
+    <div className={`p-4 md:p-6 rounded-lg ${
       variant === 'dark' ? 'bg-black text-white' : 'bg-white'
     }`}>
       <div className="text-sm mb-2">{label}</div>
@@ -19,7 +19,7 @@ const BalanceCard: React.FC<BalanceCardProps> = ({ label, amount, variant = 'lig
 
 export const BalanceCards: React.FC = () => {
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <div className="space-y-3 md:grid md:grid-cols-3 gap-6">
       <BalanceCard
         label="Current Balance"
         amount="$4,836.00"
