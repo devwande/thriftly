@@ -1,5 +1,5 @@
 import React from "react";
-import { BalanceCards } from "../components/overview/BalanceCards";
+import BalanceCards from "../components/overview/BalanceCards";
 import PotsSection from "../components/overview/PotsSection";
 import { TransactionsSection } from "../components/overview/TransactionsSection";
 import { BudgetsSection } from "../components/overview/BudgetsSection";

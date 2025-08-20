@@ -1,39 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-interface BalanceCardProps {
-  label: string;
-  amount: string;
-  variant?: 'light' | 'dark';
+interface BalanceData {
+  balance: {
+    current: number
+    income: number
+    expenses: number
+  }
 }
 
-const BalanceCard: React.FC<BalanceCardProps> = ({ label, amount, variant = 'light' }) => {
-  return (
-    <div className={`p-4 md:p-6 rounded-lg ${
-      variant === 'dark' ? 'bg-black text-white' : 'bg-white'
-    }`}>
-      <div className="text-sm mb-2">{label}</div>
-      <div className="text-3xl font-bold">{amount}</div>
-    </div>
-  );
-}
+const BalanceCards: React.FC = () => {
+  const [data, setData] = useState<BalanceData | null>(null);
 
-export const BalanceCards: React.FC = () => {
+  useEffect(() => {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((json: BalanceData) => setData(json))
+      .catch(console.error);
+  }, []);
+
+  if (!data) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-lg">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-3 md:grid md:grid-cols-3 gap-6">
-      <BalanceCard
-        label="Current Balance"
-        amount="$4,836.00"
-        variant="dark"
-      />
-      <BalanceCard
-        label="Income"
-        amount="$3,814.25"
-      />
-      <BalanceCard
-        label="Expenses"
-        amount="$1,700.50"
-      />
+      <div className="p-4 md:p-6 rounded-lg bg-black text-white">
+        <div className="text-sm mb-2">Current Balance</div>
+        <div className="text-3xl font-bold">${data.balance.current.toFixed(2)}</div>
+      </div>
+      <div className="p-4 md:p-6 rounded-lg bg-white">
+        <div className="text-sm mb-2">Income</div>
+        <div className="text-3xl font-bold">${data.balance.income.toFixed(2)}</div>
+      </div>
+      <div className="p-4 md:p-6 rounded-lg bg-white">
+        <div className="text-sm mb-2">Expenses</div>
+        <div className="text-3xl font-bold">${data.balance.expenses.toFixed(2)}</div>
+      </div>
     </div>
   );
 }
 
+export default BalanceCards;
