@@ -1,56 +1,87 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-interface Transaction {
-  id: number;
-  name: string;
-  amount: string;
-  date: string;
-  type: 'credit' | 'debit';
-  profile?: string;
+interface TransactionData {
+  transactions: Array<{
+    avatar: string
+    name: string
+    category: string
+    date: string
+    amount: number
+    recurring: boolean
+  }>
 }
 
-const transactions: Transaction[] = [
-  { id: 1, name: "Emma Richardson", amount: "+$75.50", date: "19 Aug 2024", type: "credit", profile: "src/assets/icons/profile.svg" },
-  { id: 2, name: "Savory Bites Bistro", amount: "-$55.50", date: "19 Aug 2024", type: "debit", profile: "src/assets/icons/profile.svg" },
-  {  id: 3, name: "Daniel Carter", amount: "-$42.30", date: "18 Aug 2024", type: "debit", profile: "src/assets/icons/profile.svg" },
-  { id: 4, name: "Sun Park", amount: "+$120.00", date: "17 Aug 2024",  type: "credit", profile: "src/assets/icons/profile.svg" },
-  { id: 5, name: "Urban Services Hub", amount: "-$65.00", date: "17 Aug 2024", type: "debit", profile: "src/assets/icons/profile.svg" },
-];
-
 export const TransactionsSection: React.FC = () => {
+  const [data, setData] = useState<TransactionData | null>(null);
+
+  useEffect(() => {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((json: TransactionData) => setData(json))
+      .catch(console.error);
+  }, []);
+
+  if (!data) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-lg">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white p-6 rounded-lg">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-semibold">Transactions</h2>
         <button className="text-gray-500 hover:text-gray-700 flex items-center text-sm">
           View All
-          <img src={"src/assets/icons/ArrowRight.svg"} alt='right-arrow' className="ml-3" />
+          <img
+            src={"src/assets/icons/ArrowRight.svg"}
+            alt="right-arrow"
+            className="ml-3"
+          />
         </button>
       </div>
 
-      <div className="space-y-4">
-        {transactions.map((transaction, index) => (
-          <React.Fragment key={transaction.id}>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <img src={transaction.profile} alt="profile" className="w-10 h-10 rounded-full" />
-                <div>
-                  <div className="font-medium">{transaction.name}</div>
-                </div>
+      <div className="divide-y divide-gray-200">
+        {data.transactions.slice(0, 5).map((transaction, index) => (
+          <div
+            key={index}
+            className="flex items-center justify-between py-3"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full overflow-hidden">
+                <img
+                  src={
+                    new URL(
+                      `../../assets/images/avatars/${transaction.avatar}`,
+                      import.meta.url
+                    ).href
+                  }
+                  alt={transaction.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
-
-              <div className="space-y-1">
-                <div className={transaction.type === 'credit' ? 'text-green-600 flex justify-end' : 'flex justify-end text-gray-900'}>
-                  {transaction.amount}
-                </div>
-                <div className="text-sm text-gray-500">{transaction.date}</div>
+              <div>
+                <p className="font-medium">{transaction.name}</p>
               </div>
             </div>
-            {index < transactions.length - 1 && <hr className="border-t border-gray-200" />}
-          </React.Fragment>
+            <div className="text-right">
+              <p
+                className={`font-semibold ${
+                  transaction.amount > 0 ? "text-green-600" : "text-red-600"
+                }`}
+              >
+                {transaction.amount > 0 ? "+" : "-"}$
+                {Math.abs(transaction.amount).toFixed(2)}
+              </p>
+              <p className="text-sm text-gray-600">
+                {new Date(transaction.date).toLocaleDateString()}
+              </p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
   );
-}
-
+};

@@ -9,33 +9,30 @@ import Footer from "../components/overview/Footer";
 
 export const Overview: React.FC = () => {
   return (
-    <div className="mx-auto lg:mx-0">
-      <div className="flex flex-row bg-[#F8F4F0]  lg:h-screen">
-        <div className="hidden lg:block ">
-          <Sidebar />
-        </div>
-        <div className="relative w-full mx-4 lg:mx-8 my-auto">           {/* my-auto may be removed based on styling issues */}
-          <h1 className="text-3xl font-bold my-5">Overview</h1>
-          <div className="space-y-4">
-            <div className="space-y-8">
-              <BalanceCards />
+    <main className="bg-[#F8F4F0] min-h-screen flex">
+      <div className="hidden lg:block sticky top-0 h-screen">
+        <Sidebar />
+      </div>
+
+      <div className="flex-1 px-4 lg:px-8 py-6 overflow-y-auto">
+        <h1 className="text-3xl font-bold mb-6">Overview</h1>
+
+        <div className="space-y-8">
+          <BalanceCards />
+          <div className="lg:grid lg:grid-cols-[1.4fr_1fr] gap-6">
+            <div className="space-y-6">
+              <PotsSection />
+              <TransactionsSection />
             </div>
-            <div className="lg:grid lg:grid-cols-[1.4fr_1fr] gap-6 space-y-3">
-              <div className="space-y-3">
-                <PotsSection />
-                <TransactionsSection />
-              </div>
-              <div className="row-span-2 space-y-3 pb-3 lg:pb-0">
-                <BudgetsSection />
-                <RecurringBills />
-                <Footer />
-              </div>
+
+            <div className="row-span-2 space-y-6">
+              <BudgetsSection />
+              <RecurringBills />
+              <Footer />
             </div>
           </div>
         </div>
-   
       </div>
-
-    </div>
+    </main>
   );
 };
