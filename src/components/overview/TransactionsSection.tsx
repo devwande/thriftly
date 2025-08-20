@@ -33,21 +33,21 @@ export const TransactionsSection: React.FC = () => {
     <div className="bg-white p-6 rounded-lg">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-semibold">Transactions</h2>
-        <button className="text-gray-500 hover:text-gray-700 flex items-center text-sm">
+        <a href='/transactions' className="text-gray-500 hover:text-gray-700 flex items-center text-sm">
           View All
           <img
             src={"src/assets/icons/ArrowRight.svg"}
             alt="right-arrow"
             className="ml-3"
           />
-        </button>
+        </a>
       </div>
 
       <div className="divide-y divide-gray-200">
         {data.transactions.slice(0, 5).map((transaction, index) => (
           <div
             key={index}
-            className="flex items-center justify-between py-3"
+            className="flex items-center justify-between py-[15px]"
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full overflow-hidden">

@@ -60,14 +60,14 @@ export const BudgetsSection: React.FC = () => {
     <div className="bg-white p-6 rounded-lg">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-semibold">Budgets</h2>
-        <button className="text-gray-500 hover:text-gray-700 flex items-center text-sm">
+        <a className="text-gray-500 hover:text-gray-700 flex items-center text-sm" href="/budgets">
           See Details
           <img
             src={"src/assets/icons/ArrowRight.svg"}
             alt="right-arrow"
             className="ml-3"
           />
-        </button>
+        </a>
       </div>
 
       <div className="flex items-center space-x-8">

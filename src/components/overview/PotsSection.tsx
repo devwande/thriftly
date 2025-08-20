@@ -30,9 +30,9 @@ const PotsSection = () => {
     <div className="w-full p-4 bg-white rounded-lg">
       <div className="flex justify-between items-center">
         <h2 className="text-lg font-semibold">Pots</h2>
-        <button className="flex items-center text-sm text-gray-500 hover:underline">See Details  
+        <a href="/pots" className="flex items-center text-sm text-gray-500">See Details  
           <img src={"src/assets/icons/ArrowRight.svg"} alt='right-arrow' className="ml-3" /> 
-        </button>
+        </a>
       </div>
 
       <div className="grid grid-cols-2 gap-3">
