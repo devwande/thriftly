@@ -8,11 +8,11 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { icon: "src/assets/icons/Overview.svg", label: 'Overview', href: '/overview' },
-  { icon: "src/assets/icons/Transactions.svg", label: 'Transactions', href: '/transaction' },
-  { icon: "src/assets/icons/Budget.svg", label: 'Budgets', href: '/budget' },
-  { icon: "src/assets/icons/Pot.svg", label: 'Pots', href: '/pot' },
-  { icon: "src/assets/icons/Bill.svg", label: 'Recurring Bills', href: '/bill' },
+  { icon: "/assets/icons/Overview.svg", label: 'Overview', href: '/overview' },
+  { icon: "/assets/icons/Transactions.svg", label: 'Transactions', href: '/transaction' },
+  { icon: "/assets/icons/Budget.svg", label: 'Budgets', href: '/budget' },
+  { icon: "/assets/icons/Pot.svg", label: 'Pots', href: '/pot' },
+  { icon: "/assets/icons/Bill.svg", label: 'Recurring Bills', href: '/bill' },
 ];
 
 const Sidebar = () => {
@@ -48,7 +48,7 @@ const Sidebar = () => {
         className="flex items-center space-x-3 px-4 py-3 text-sm whitespace-nowrap hover:text-white"
       >
         <img
-          src={isMinimized ? "src/assets/icons/Maximise.svg" : "src/assets/icons/Minimise.svg"}
+          src={isMinimized ? "/assets/icons/Maximise.svg" : "/assets/icons/Minimise.svg"}
           alt="toggle icon"
           className="p-6 transition-all"
         />

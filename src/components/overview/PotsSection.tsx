@@ -31,7 +31,7 @@ const PotsSection = () => {
       <div className="flex justify-between items-center">
         <h2 className="text-lg font-semibold">Pots</h2>
         <a href="/pots" className="flex items-center text-sm text-gray-500">See Details  
-          <img src={"src/assets/icons/ArrowRight.svg"} alt='right-arrow' className="ml-3" /> 
+          <img src={"/assets/icons/ArrowRight.svg"} alt='right-arrow' className="ml-3" /> 
         </a>
       </div>
 
@@ -39,7 +39,7 @@ const PotsSection = () => {
         <div className="mt-4 p-4 bg-[#F8F4F0] rounded-lg flex w-3/4">
           <div className="flex items-center">
             <div className="flex justify-start items-center">
-              <img src={"src/assets/icons/money.svg"} alt="Money icon" />
+              <img src={"/assets/icons/money.svg"} alt="Money icon" />
             </div>
             <div className="ml-4 space-y-3">
               <p className="text-sm text-gray-500">Total Saved</p>

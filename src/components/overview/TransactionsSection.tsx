@@ -36,7 +36,7 @@ export const TransactionsSection: React.FC = () => {
         <a href='/transactions' className="text-gray-500 hover:text-gray-700 flex items-center text-sm">
           View All
           <img
-            src={"src/assets/icons/ArrowRight.svg"}
+            src={"/assets/icons/ArrowRight.svg"}
             alt="right-arrow"
             className="ml-3"
           />
@@ -52,12 +52,7 @@ export const TransactionsSection: React.FC = () => {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full overflow-hidden">
                 <img
-                  src={
-                    new URL(
-                      `../../assets/images/avatars/${transaction.avatar}`,
-                      import.meta.url
-                    ).href
-                  }
+                  src={transaction.avatar}
                   alt={transaction.name}
                   className="w-full h-full object-cover"
                 />

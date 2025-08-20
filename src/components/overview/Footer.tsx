@@ -8,11 +8,11 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { path: '/overview', icon: 'src/assets/icons/Overview.svg', label: 'Overview' },
-  { path: '/transaction', icon: 'src/assets/icons/Transactions.svg', label: 'Transactions' },
-  { path: '/budget', icon: 'src/assets/icons/Budget.svg', label: 'Budgets' },
-  { path: '/pot', icon: 'src/assets/icons/Pot.svg', label: 'Pots' },
-  { path: '/bill', icon: 'src/assets/icons/Bill.svg', label: 'Recurring bills' },
+  { path: '/overview', icon: '/assets/icons/Overview.svg', label: 'Overview' },
+  { path: '/transaction', icon: '/assets/icons/Transactions.svg', label: 'Transactions' },
+  { path: '/budget', icon: '/assets/icons/Budget.svg', label: 'Budgets' },
+  { path: '/pot', icon: '/assets/icons/Pot.svg', label: 'Pots' },
+  { path: '/bill', icon: '/assets/icons/Bill.svg', label: 'Recurring bills' },
 ];
 
 const Footer = () => {

@@ -23,7 +23,7 @@ const Login = () => {
     <header className='lg:hidden w-full bg-black text-white text-center font-black text-3xl p-4 rounded-b-md'>thriftly</header>
         <div className='h-screen flex flex-row'>
             <div className='hidden lg:block max-w-1/2 relative bg-[#F8F4F0]'>
-                <img src={"src/assets/images/Sidebar.svg"} alt="" className="h-full p-6" />
+                <img src={"/assets/images/Sidebar.svg"} alt="" className="h-full p-6" />
                 <p className="absolute top-4 left-4 text-white text-2xl font-bold p-8">thriftly</p>
                 <div className='absolute bottom-4 left-4 max-w-[500px] space-y-4 p-8'>
                     <p className=" text-white font-bold text-2xl">Keep track of your money and save for your future</p>
@@ -45,7 +45,7 @@ const Login = () => {
                             <label className='text-gray-500' htmlFor="password">Password</label>
                             <input className='border border-black rounded-md opacity-100 p-3 outline-black' type={showPassword ? "text" : "password"} id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                             <div className='absolute inset-y-0 top-6 right-0 pr-3 flex items-center cursor-pointer' onClick={togglePasswordVisibility}>
-                            {showPassword ? <img src={'src/assets/icons/eye-slash.svg'} className='h-5 w-5 text-gray-500' alt="eye-slash" /> : <img src={'src/assets/icons/eye.svg'} className='h-5 w-5 text-gray-500' alt="eye" />}
+                            {showPassword ? <img src={'/assets/icons/eye-slash.svg'} className='h-5 w-5 text-gray-500' alt="eye-slash" /> : <img src={'/assets/icons/eye.svg'} className='h-5 w-5 text-gray-500' alt="eye" />}
                             </div>
                         </div>
                         

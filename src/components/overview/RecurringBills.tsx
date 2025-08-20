@@ -71,7 +71,7 @@ export const RecurringBills: React.FC = () => {
         <h2 className="text-xl font-semibold">Recurring Bills</h2>
         <a href="/bills" className="text-gray-500 hover:text-gray-700 flex items-center text-sm">
           See Details
-          <img src={"src/assets/icons/ArrowRight.svg"} alt="right-arrow" className="ml-3" />
+          <img src={"/assets/icons/ArrowRight.svg"} alt="right-arrow" className="ml-3" />
         </a>
       </div>
 
