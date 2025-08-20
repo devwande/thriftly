@@ -22,7 +22,6 @@ const Sidebar = () => {
   const toggleSidebar = () => {
     setIsMinimized(!isMinimized);
   };
-
   return (
     <div className={`${isMinimized ? 'w-28' : 'w-64'} bg-black rounded-r-xl min-h-screen flex flex-col text-gray-300 transition-width duration-300`}>
       <div className="mb-8 p-6">
