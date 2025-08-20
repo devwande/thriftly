@@ -45,7 +45,7 @@ const Login = () => {
                             <label className='text-gray-500' htmlFor="password">Password</label>
                             <input className='border border-black rounded-md opacity-100 p-3 outline-black' type={showPassword ? "text" : "password"} id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                             <div className='absolute inset-y-0 top-6 right-0 pr-3 flex items-center cursor-pointer' onClick={togglePasswordVisibility}>
-                            {showPassword ? <img src={'/assets/icons/eye-slash.svg'} className='h-5 w-5 text-gray-500' alt="eye-slash" /> : <img src={'/assets/icons/eye.svg'} className='h-5 w-5 text-gray-500' alt="eye" />}
+                            {showPassword ? <img src={'/assets/icons/Eye-slash.svg'} className='h-5 w-5 text-gray-500' alt="eye-slash" /> : <img src={'/assets/icons/Eye.svg'} className='h-5 w-5 text-gray-500' alt="eye" />}
                             </div>
                         </div>
                         
