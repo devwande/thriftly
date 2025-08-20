@@ -27,7 +27,7 @@ const BalanceCards: React.FC = () => {
   }
 
   return (
-    <div className="space-y-3 md:grid md:grid-cols-3 gap-6">
+    <div className="space-y-3 md:space-y-0 md:grid md:grid-cols-3 gap-6">
       <div className="p-4 md:p-6 rounded-lg bg-black text-white">
         <div className="text-sm mb-2">Current Balance</div>
         <div className="text-3xl font-bold">${data.balance.current.toFixed(2)}</div>
