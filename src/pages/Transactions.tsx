@@ -113,7 +113,7 @@ const Transactions = () => {
           </h1>
           
           <div className="bg-white rounded-lg overflow-hidden">
-            <div className="p-6 border-b">
+            <div className="p-6">
               <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
                 <div className="relative flex-1 max-w-md">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
@@ -163,21 +163,20 @@ const Transactions = () => {
               </div>
             </div>
 
-            {/* Transactions Table */}
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className="border-b">
                   <tr>
-                    <th className="text-left py-4 px-6 font-medium text-gray-900">
+                    <th className="text-left py-4 px-6 font-medium text-gray-500">
                       Recipient / Sender
                     </th>
-                    <th className="text-left py-4 px-6 font-medium text-gray-900">
+                    <th className="text-left py-4 px-6 font-medium text-gray-500">
                       Category
                     </th>
-                    <th className="text-left py-4 px-6 font-medium text-gray-900">
+                    <th className="text-left py-4 px-6 font-medium text-gray-500">
                       Transaction Date
                     </th>
-                    <th className="text-right py-4 px-6 font-medium text-gray-900">
+                    <th className="text-right py-4 px-6 font-medium text-gray-500">
                       Amount
                     </th>
                   </tr>
@@ -200,12 +199,12 @@ const Transactions = () => {
                         </div>
                       </td>
                       <td className="py-4 px-6">
-                        <span className="text-gray-600">
+                        <span className="text-gray-500">
                           {transaction.category}
                         </span>
                       </td>
                       <td className="py-4 px-6">
-                        <span className="text-gray-600">
+                        <span className="text-gray-500">
                           {formatDate(transaction.date)}
                         </span>
                       </td>
@@ -227,11 +226,11 @@ const Transactions = () => {
               </table>
             </div>
             {/* Pagination */}
-            <div className="flex items-center justify-between px-6 py-4 border-t">
+            <div className="flex items-center justify-between px-6 py-6 border-t">
               <button
                 onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
-                className={`flex items-center gap-2 px-3 py-1 border rounded-md text-sm ${
+                className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm ${
                   currentPage === 1
                     ? "opacity-50 cursor-not-allowed"
                     : "hover:bg-gray-100"
@@ -248,7 +247,7 @@ const Transactions = () => {
                     <button
                       key={pageNum}
                       onClick={() => setCurrentPage(pageNum)}
-                      className={`w-8 h-8 flex items-center justify-center rounded-md text-sm ${
+                      className={`w-10 h-10 flex items-center justify-center rounded-md text-sm ${
                         currentPage === pageNum
                           ? "bg-black text-white"
                           : "border hover:bg-gray-100 text-gray-700"
@@ -280,7 +279,7 @@ const Transactions = () => {
                   setCurrentPage((prev) => Math.min(prev + 1, totalPages))
                 }
                 disabled={currentPage === totalPages}
-                className={`flex items-center gap-2 px-3 py-1 border rounded-md text-sm ${
+                className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm ${
                   currentPage === totalPages
                     ? "opacity-50 cursor-not-allowed"
                     : "hover:bg-gray-100"
