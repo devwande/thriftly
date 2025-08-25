@@ -64,7 +64,7 @@ export const TransactionsSection: React.FC = () => {
             <div className="text-right">
               <p
                 className={`font-semibold ${
-                  transaction.amount > 0 ? "text-green-600" : "text-red-600"
+                  transaction.amount > 0 ? "text-green-600" : "text-black"
                 }`}
               >
                 {transaction.amount > 0 ? "+" : "-"}$

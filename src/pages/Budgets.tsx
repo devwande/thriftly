@@ -1,4 +1,4 @@
-import Footer from "../components/overview/Footer";
+import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
 
 const Budgets = () => {

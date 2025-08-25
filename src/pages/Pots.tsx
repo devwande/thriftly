@@ -1,6 +1,5 @@
-import Footer from "../components/overview/Footer"
-import Sidebar from "../components/Sidebar"
-
+import Footer from "../components/Footer";
+import Sidebar from "../components/Sidebar";
 
 const Pots = () => {
   return (
@@ -10,7 +9,7 @@ const Pots = () => {
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Pots
+export default Pots;

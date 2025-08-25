@@ -5,7 +5,7 @@ import { TransactionsSection } from "../components/overview/TransactionsSection"
 import { BudgetsSection } from "../components/overview/BudgetsSection";
 import { RecurringBills } from "../components/overview/RecurringBills";
 import Sidebar from "../components/Sidebar";
-import Footer from "../components/overview/Footer";
+import Footer from "../components/Footer";
 
 export const Overview: React.FC = () => {
   return (
