@@ -54,7 +54,7 @@ const TransactionsPagination = ({ currentPage, totalPages, setCurrentPage }: Tra
           
           {currentPage < totalPages - 1 && (
             <>
-              <span className="text-gray-500 mx-1">...</span>
+              <span className="w-8 h-8 flex items-center justify-center rounded-md border text-gray-500 mx-1">...</span>
               <button
                 onClick={() => setCurrentPage(totalPages)}
                 className="w-8 h-8 flex items-center justify-center rounded-md text-sm border hover:bg-gray-100 active:bg-gray-200 text-gray-700"

@@ -45,7 +45,7 @@ const Sidebar = () => {
 
       <button
         onClick={toggleSidebar}
-        className="flex items-center space-x-3 px-4 py-3 text-sm whitespace-nowrap hover:text-white"
+        className="flex items-center space-x-3 px-4 py-3 text-sm whitespace-nowrap hover:text-white transition-all duration-300"
       >
         <img
           src={isMinimized ? "/assets/icons/Maximise.svg" : "/assets/icons/Minimise.svg"}
