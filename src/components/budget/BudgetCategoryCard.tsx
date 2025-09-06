@@ -44,31 +44,40 @@ const BudgetCategoryCard = ({
       <p className="text-sm text-gray-600 mb-4">Maximum of ${maximum.toFixed(2)}</p>
 
       <div className="mb-6">
-        <div className="w-full bg-gray-200 rounded-full h-2.5 mb-3">
-          <div
-            className="h-2.5 rounded-full"
-            style={{
-              width: `${Math.min(percentage, 100)}%`,
-              backgroundColor: theme,
-            }}
-          ></div>
+        <div className="w-full bg-[#F8F4F0] rounded-md h-8 mb-3 flex items-center">
+            <div
+                className="h-6 mx-1 rounded-md"
+                style={{
+                width: `${Math.min(percentage, 100)}%`,
+                backgroundColor: theme,
+                }}
+            ></div>
         </div>
-        <div className="flex justify-between text-sm">
-          <div>
-            <p className="font-medium">Spent</p>
-            <p className="text-gray-600">${spent.toFixed(2)}</p>
+        <div className="flex justify-around text-sm">
+          <div className="flex items-center gap-4">
+            <div className="w-1 h-9 rounded-full" style={{ backgroundColor: theme }} />
+            <div>
+                <p className="font-medium">Spent</p>
+                <p className="text-gray-600">${spent.toFixed(2)}</p>
+            </div>
           </div>
+
           <div className="text-right">
-            <p className="font-medium">Remaining</p>
-            <p className={isOverBudget ? "text-red-600" : "text-gray-600"}>
-              {isOverBudget ? "-" : ""}${Math.abs(remaining).toFixed(2)}
-            </p>
-          </div>
+            <div className="flex items-center gap-4">
+                <div className="w-1 h-9 rounded-full bg-[#F8F4F0]"/>
+                <div>
+                    <p className="font-medium">Remaining</p>
+                    <p className={isOverBudget ? "text-red-600" : "text-gray-600"}>
+                      {isOverBudget ? "-" : ""}${Math.abs(remaining).toFixed(2)}
+                    </p>
+                </div>
+            </div>
+           </div>
         </div>
       </div>
 
-      <div>
-        <div className="flex items-center justify-between mb-4">
+      <div className="p-4 bg-[#F8F4F0] rounded-md">
+        <div className="flex items-center justify-between mb-4 ">
           <h4 className="font-medium">Latest Spending</h4>
           <button className="text-sm text-gray-600 hover:underline">See All →</button>
         </div>

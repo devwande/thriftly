@@ -6,6 +6,7 @@ import { Plus } from "lucide-react"
 import SpendingChart from "../components/budget/SpendingChart"
 import SpendingSummary from "../components/budget/SpendingSummary"
 import BudgetCategoryCard from "../components/budget/BudgetCategoryCard"
+import Footer from "../components/Footer"
 
 interface Transaction {
   avatar: string
@@ -79,7 +80,7 @@ const Budget = () => {
 
   if (!data) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#F8F4F0] flex items-center justify-center">
         <div className="text-lg">Loading...</div>
       </div>
     )
@@ -92,30 +93,33 @@ const Budget = () => {
   }))
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      <Sidebar />
+    <div className="min-h-screen bg-[#F8F4F0] flex">
+      <div className="hidden lg:block sticky top-0 h-screen">
+        <Sidebar />
+      </div>
       <main className="flex-1 p-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h1 className="text-3xl font-bold text-gray-900">Budgets</h1>
-            <button className="flex items-center px-4 py-2 rounded-md bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium">
-              <Plus className="h-4 w-4 mr-2" />
+            <button className="flex items-center px-4 py-2 rounded-md bg-black cursor-pointer text-white text-sm font-medium">
+              <Plus className="h-8 w-4 mr-1" />
               Add New Budget
             </button>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-1">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
+            <div className="lg:col-span-2">
               <div className="bg-white rounded-lg shadow p-6">
                 <SpendingChart chartData={chartData} totalRemaining={totalRemaining} totalBudget={totalBudget} />
                 <SpendingSummary budgetData={budgetData} />
               </div>
             </div>
 
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-3 space-y-6">
               {budgetData.map((budget) => (
                 <BudgetCategoryCard key={budget.category} {...budget} formatDate={formatDate} />
               ))}
+              <Footer />
             </div>
           </div>
         </div>
