@@ -86,21 +86,21 @@ export default function PotsPage() {
 
   if (!data) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#F8F4F0] flex items-center justify-center">
         <div className="text-lg">Loading...</div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-[#F8F4F0] flex">
       <div className="hidden lg:block sticky top-0 h-screen">
         <Sidebar />
       </div>
       <main className="flex-1 p-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
-            <h1 className="text-3xl font-bold text-gray-900">Pots</h1>
+            <h1 className="text-3xl font-bold text-black">Pots</h1>
             <button
               onClick={() => setIsAddPotOpen(true)}
               className="flex items-center px-4 py-2 rounded-md bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium"
@@ -111,7 +111,7 @@ export default function PotsPage() {
           </div>
 
           {data.pots.length === 0 ? (
-            <div className="flex flex-col items-center justify-center py-20 bg-white rounded-lg shadow">
+            <div className="flex flex-col items-center justify-center py-20 rounded-lg shadow">
               <p className="text-xl font-semibold text-gray-800 mb-2">
                 You don’t have any pots
               </p>

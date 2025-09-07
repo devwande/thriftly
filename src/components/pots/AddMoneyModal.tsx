@@ -30,7 +30,7 @@ const AddMoneyModal = ({ isOpen, onClose, potName, onAddMoney }: AddMoneyModalPr
         />
         <button
           onClick={handleSubmit}
-          className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-500"
+          className="w-full text-black py-2 rounded-md bg-[#F8F4F0] border-[#F8F4F0] hover:bg-black hover:border-black hover:text-white transition-all duration-300"
         >
           Add Money
         </button>
